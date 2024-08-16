@@ -53,6 +53,7 @@ const config: Config = {
     image: "img/logo.jpg",
     navbar: {
       logo: {
+        className: "dsb-logo",
         alt: "DSB Logo",
         src: "img/logo.svg",
       },
@@ -61,7 +62,7 @@ const config: Config = {
           type: "docSidebar",
           sidebarId: "tutorialSidebar",
           position: "left",
-          label: "Welcome!",
+          label: "The Blueprint",
         },
         {
           href: "https://youtube.com/@damienjburks",
@@ -86,15 +87,6 @@ const config: Config = {
     footer: {
       style: "dark",
       links: [
-        {
-          title: "Docs",
-          items: [
-            {
-              label: "Tutorial",
-              to: "/docs/intro",
-            },
-          ],
-        },
         {
           title: "Community",
           items: [
