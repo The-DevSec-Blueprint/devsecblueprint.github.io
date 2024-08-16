@@ -5,7 +5,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 const config: Config = {
   title: "DSB",
   tagline: "DevSec Blueprint",
-  favicon: "img/favicon.ico",
+  favicon: "img/logo.svg",
 
   // Set the production url of your site here
   url: "https://devsecblueprint.github.io",
@@ -35,22 +35,12 @@ const config: Config = {
       {
         docs: {
           sidebarPath: "./sidebars.ts",
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
+          routeBasePath: '/',
+          path: "docs",
           editUrl:
             "https://github.com/The-DevSec-Blueprint/devsecblueprint.github.io",
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ["rss", "atom"],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/The-DevSec-Blueprint/devsecblueprint.github.io",
-        },
+        blog: false,
         theme: {
           customCss: "./src/css/custom.css",
         },
@@ -60,11 +50,10 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: "img/docusaurus-social-card.jpg",
+    image: "img/logo.jpg",
     navbar: {
-      title: "My Site",
       logo: {
-        alt: "My Site Logo",
+        alt: "DSB Logo",
         src: "img/logo.svg",
       },
       items: [
@@ -72,9 +61,13 @@ const config: Config = {
           type: "docSidebar",
           sidebarId: "tutorialSidebar",
           position: "left",
-          label: "Tutorial",
+          label: "Welcome!",
         },
-        { to: "/blog", label: "Blog", position: "left" },
+        {
+          href: "https://youtube.com/@damienjburks",
+          label: "YouTube",
+          position: "right",
+        },
         {
           href: "https://github.com/The-DevSec-Blueprint/devsecblueprint.github.io",
           label: "GitHub",
@@ -106,34 +99,17 @@ const config: Config = {
           title: "Community",
           items: [
             {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus",
-            },
-            {
               label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus",
+              href: "https://discordapp.com/invite/dummy",
             },
             {
               label: "Twitter",
-              href: "https://twitter.com/docusaurus",
-            },
-          ],
-        },
-        {
-          title: "More",
-          items: [
-            {
-              label: "Blog",
-              to: "/blog",
-            },
-            {
-              label: "GitHub",
-              href: "https://github.com/facebook/docusaurus",
+              href: "https://twitter.com/damienjburks",
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} The DevSec Blueprint LLC - Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
