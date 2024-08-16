@@ -62,7 +62,7 @@ const config: Config = {
           type: "docSidebar",
           sidebarId: "tutorialSidebar",
           position: "left",
-          label: "The Blueprint",
+          label: "The DevSec Blueprint",
         },
         {
           href: "https://youtube.com/@damienjburks",
