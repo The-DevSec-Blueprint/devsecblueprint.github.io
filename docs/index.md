@@ -1,6 +1,6 @@
 ---
-id: home-page
-title: Welcome!
+id: intro
+title: Introduction
 description: The Ultimate (and free) Blueprint for Coding Fun and Securing Runs!
 sidebar_position: 1
 ---

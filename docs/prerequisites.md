@@ -1,6 +1,6 @@
 ---
 id: prerequisities
-title: Pre-requisities
+title: Prerequisities
 description: Pre-requisites
 sidebar_position: 2
 ---
