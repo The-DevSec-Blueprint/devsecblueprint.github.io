@@ -1,69 +1,75 @@
-# Installing and Configurating Gitea
+# **Installing and Configuring Gitea**
 
-## Prerequisities
+## **Prerequisites**
 
-1. **Install MariaDB:**
+1. **Install PostgreSQL:**
 
-   - Run the following command to install MariaDB:
+   - Run the following command to install PostgreSQL and its contrib package:
 
      ```bash
-     sudo apt install mariadb-server
+     sudo apt install postgresql postgresql-contrib
      ```
 
-2. **Secure MariaDB Installation:**
-
-   - Run the secure installation script:
+   - Switch to the PostgreSQL user:
 
      ```bash
-     sudo mysql_secure_installation
+     sudo -i -u postgres
      ```
 
-   - During the setup, follow these prompts:
-     - **Enter current password for root:** Press Enter if none.
-     - **Switch to unix_socket authentication?** Type `y` and press Enter.
-     - **Change the root password?** Type `n` and press Enter.
-     - **Remove anonymous users?** Type `y` and press Enter.
-     - **Disallow root login remotely?** Type `y` and press Enter.
-     - **Remove test database and access to it?** Type `y` and press Enter.
-     - **Reload privilege tables now?** Type `y` and press Enter.
-   - After completing these steps, your MariaDB installation should be secure.
-
-3. **Log into MariaDB as Root:**
-
-   - Use the following command to log into MariaDB:
+   - Update the PostgreSQL configuration files:
 
      ```bash
-     mysql -u root -p
+     sudo nano /etc/postgresql/16/main/postgresql.conf
+     ```
+
+   - Scroll down and uncomment the `listen_addresses` setting, then set it to `localhost`:
+
+     ```conf
+     listen_addresses = 'localhost'
+     ```
+
+   - Scroll down and uncomment the `password_encryption` setting, then set it to `scram-sha-256`:
+
+     ```conf
+     password_encryption = scram-sha-256
+     ```
+
+3. **Log into PostgreSQL:**
+
+   - Log into the PostgreSQL command line as the `postgres` user:
+
+     ```bash
+     psql
      ```
 
 4. **Configure the Database:**
 
-   - Create a new database for Gitea:
+   - Create a new role (user) for Gitea with a secure password and a new database owned by that role:
 
      ```sql
-     CREATE DATABASE giteadb CHARACTER SET 'utf8mb4' COLLATE 'utf8mb4_bin';
+     CREATE ROLE gitea WITH LOGIN PASSWORD 'your_password';
+     CREATE DATABASE giteadb WITH OWNER gitea TEMPLATE template0 ENCODING 'UTF8' LC_COLLATE 'en_US.UTF-8' LC_CTYPE 'en_US.UTF-8';
      ```
 
-   - Grant all privileges to a new user:
+   - Update the `pg_hba.conf` file to allow the `gitea` user to connect to the `giteadb` database using `scram-sha-256`:
 
-     ```sql
-     GRANT ALL PRIVILEGES ON giteadb.* TO 'gitea'@'%';
-     FLUSH PRIVILEGES;
+     ```bash
+     sudo nano /etc/postgresql/16/main/pg_hba.conf
      ```
 
-   - Create a user for Gitea and set a secure password:
+     Add the following line:
 
-     ```sql
-     SET old_passwords=0;
-     CREATE USER 'gitea'@'%' IDENTIFIED BY 'your_password';
+     ```conf
+     local    giteadb    gitea    scram-sha-256
      ```
 
 5. **Test Database Connection:**
 
-   - Test the connection to the Gitea database:
+   - Restart the PostgreSQL service and test the connection to the Gitea database:
 
      ```bash
-     mysql -u gitea -h 203.0.113.3 -p giteadb
+     sudo systemctl restart postgresql.service
+     psql -U gitea -d giteadb
      ```
 
 6. **Install Nginx:**
@@ -112,11 +118,11 @@
      sudo systemctl restart nginx
      ```
 
-## Installation Steps
+## **Installation Steps**
 
 8. **Install Gitea:**
 
-   - Install Gitea using snap:
+   - Install Gitea using Snap:
 
      ```bash
      sudo snap install gitea
@@ -128,12 +134,12 @@
      sudo snap start gitea
      ```
 
-## Configuration Steps
+## **Configuration Steps**
 
 9. **Configure Gitea:**
 
    - Open a web browser and navigate to your server's IP address or domain name.
-   - Follow the on-screen instructions to configure Gitea, entering your previously created database credentials when prompted.
+   - Follow the on-screen instructions to configure Gitea, entering your previously created PostgreSQL database credentials when prompted.
      ![Gitea Setup Screenshot](installing-gitea/image.png)
 
 10. **Create an Account:**
