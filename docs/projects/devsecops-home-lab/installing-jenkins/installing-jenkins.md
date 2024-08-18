@@ -1,4 +1,8 @@
-# **Installing and Configuring Jenkins**
+---
+id: install-config-jenkins
+title: Jenkins - Installation and Configuration
+sidebar_position: 3
+---
 
 ## Prerequisities
 
@@ -76,7 +80,7 @@
      ```
 
    - You should see the Jenkins setup screen.
-     ![alt text](image.png)
+     ![alt text](/img/projects/devsecops-home-lab/installing-jenkins/image.png)
 
 6. **Retrieve the Initial Admin Password:**
 
@@ -87,19 +91,19 @@
      ```
 
    - Copy the password and enter it in the password box on the web interface.
-     ![alt text](image-1.png)
+     ![alt text](/img/projects/devsecops-home-lab/installing-jenkins/image-1.png)
 
 7. **Install Suggested Plugins:**
 
    - After entering the admin password, click **Install suggested plugins** and allow Jenkins to install the necessary plugins.
-     ![alt text](image-2.png)
+     ![alt text](/img/projects/devsecops-home-lab/installing-jenkins/image-2.png)
 
 8. **Set Up Your Admin Account:**
 
    - After the plugins are installed, you’ll be prompted to set up your admin account. Enter your details and set up your Jenkins instance.
-     ![alt text](image-3.png)
-     ![alt text](image-4.png)
+     ![alt text](/img/projects/devsecops-home-lab/installing-jenkins/image-3.png)
+     ![alt text](/img/projects/devsecops-home-lab/installing-jenkins/image-4.png)
 
 9. **Jenkins is Ready!**
    - Once the setup is complete, Jenkins is fully configured and ready for use.
-     ![alt text](image-5.png)
+     ![alt text](/img/projects/devsecops-home-lab/installing-jenkins/image-5.png)

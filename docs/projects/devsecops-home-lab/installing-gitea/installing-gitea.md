@@ -1,4 +1,8 @@
-# **Installing and Configuring Gitea**
+---
+id: install-config-gitea
+title: Gitea - Installation and Configuration
+sidebar_position: 3
+---
 
 ## **Prerequisites**
 
@@ -34,7 +38,7 @@
      password_encryption = scram-sha-256
      ```
 
-3. **Log into PostgreSQL:**
+2. **Log into PostgreSQL:**
 
    - Log into the PostgreSQL command line as the `postgres` user:
 
@@ -42,7 +46,7 @@
      psql
      ```
 
-4. **Configure the Database:**
+3. **Configure the Database:**
 
    - Create a new role (user) for Gitea with a secure password and a new database owned by that role:
 
@@ -63,7 +67,7 @@
      local    giteadb    gitea    scram-sha-256
      ```
 
-5. **Test Database Connection:**
+4. **Test Database Connection:**
 
    - Restart the PostgreSQL service and test the connection to the Gitea database:
 
@@ -72,7 +76,7 @@
      psql -U gitea -d giteadb
      ```
 
-6. **Install Nginx:**
+5. **Install Nginx:**
 
    - Install Nginx using the following command:
 
@@ -80,7 +84,7 @@
      sudo apt install nginx
      ```
 
-7. **Configure Nginx:**
+6. **Configure Nginx:**
 
    - Unlink the default configuration file:
 
@@ -120,7 +124,7 @@
 
 ## **Installation Steps**
 
-8. **Install Gitea:**
+7. **Install Gitea:**
 
    - Install Gitea using Snap:
 
@@ -136,17 +140,17 @@
 
 ## **Configuration Steps**
 
-9. **Configure Gitea:**
+8. **Configure Gitea:**
 
    - Open a web browser and navigate to your server's IP address or domain name.
    - Follow the on-screen instructions to configure Gitea, entering your previously created PostgreSQL database credentials when prompted.
-     ![Gitea Setup Screenshot](installing-gitea/image.png)
+     ![Gitea Setup Screenshot](/img/projects/devsecops-home-lab/installing-gitea/image.png)
 
-10. **Create an Account:**
+9. **Create an Account:**
 
     - Create an admin account to manage your Gitea instance.
-      ![Create Account Screenshot](installing-gitea/image-1.png)
+      ![Create Account Screenshot](/img/projects/devsecops-home-lab/installing-gitea/image-1.png)
 
-11. **You’re Done!**
+10. **You’re Done!**
     - Congratulations! Gitea is now successfully installed and configured on your server.
-      ![Success Screenshot](installing-gitea/image-2.png)
+      ![Success Screenshot](/img/projects/devsecops-home-lab/installing-gitea/image-2.png)

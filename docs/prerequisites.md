@@ -1,8 +1,35 @@
 ---
-id: prerequisities
-title: Prerequisities
-description: Pre-requisites
+id: prerequisites
+title: Prerequisites
+description: Essential knowledge and skills needed before starting the DevSecOps learning pathway.
 sidebar_position: 2
 ---
 
-Coming Soon!
+Author: [Damien Burks]
+
+## Overview
+
+Before diving into the core concepts and theories of DevSecOps, it's important to build a solid foundation with some essential background knowledge. The topics/concepts that I am going to recommend will be extremely beneficial for you to understand, because it's the foundational pieces of DevSecOps.
+
+## Concepts You'll Need To Know
+
+| Concept | Reason(s) You Need To Know It | Resources |
+|---|---|---|
+| DevOps | Grasp the principles of DevOps, including the culture of collaboration, automation, and continuous integration/continuous deployment (CI/CD). A solid understanding of DevOps practices is crucial as DevSecOps builds on these foundations by integrating security into the development process. | <ul><li><a href="https://thedevops.guide">The DevOps Guide</a></li><li><a href="https://learntocloud.guide/phase4/">Learn To Cloud - Phase 4</a></li><li><a href="https://www.youtube.com/watch?v=0yWAtQ6wYNM&pp=ygUOd2FodCBpcyBkZXZvcHM%3D">What is DevOps? REALLY understand it - DevOps vs SRE</a></li></ul> |
+| Linux and Bash Scripting | Familiarity with Linux is essential, as it's a common environment in DevSecOps workflows. You'll need to know how to navigate the Linux command line, manage files and processes, and automate tasks using Bash scripting. This knowledge will be key as you begin to secure and automate processes within your infrastructure. | <ul><li><a href="https://www.youtube.com/watch?v=zA3vmx0GaO8&pp=ygUNd2FodCBpcyBsaW51eA%3D%3D">What is Linux?</a></li><li><a href="https://learntocloud.guide/phase1/">Learn To Cloud - Phase 1</a></li></ul> |
+| Programming Concepts | A basic understanding of programming is necessary for DevSecOps. You'll be working with various scripts, tools, and automation processes that require coding skills. Whether you're familiar with Python, Java, or another language, being comfortable with programming concepts will enable you to create and manage secure, automated workflows effectively. | <ul><li><a href="https://www.youtube.com/watch?v=zOjov-2OZ0E&pp=ygUlcHJvZ3JhbW1pbmcgY29uY2VwdHMgYW5kIGZ1bmRhbWVudGFscw%3D%3D">Introduction to Programming and Computer Science</a></li><li><a href="https://www.udemy.com/course/complete-python-bootcamp/">The Complete Python Bootcamp From Zero to Hero in Python</a></li><li><a href="https://learntocloud.guide/phase2/">Learn To Cloud - Phase 2</a></li></ul> |
+| Networking | Understanding the basics of networking is vital for securing and managing infrastructure. You'll need to know about IP addressing, DNS, firewalls, and common protocols (HTTP, HTTPS, FTP). This knowledge will help you configure and secure networks, which is a critical aspect of DevSecOps practices. | <ul><li><a href="https://www.youtube.com/watch?v=3QhU9jd03a0&pp=ygUPbmV0d29ya2luZyAxMDEg">Computer Networks: Crash Course Computer Science</a></li></ul> |
+| Basic Security Concepts | A solid grasp of fundamental security concepts is essential. This includes knowledge of encryption, authentication, access control, and common security threats like malware and phishing. Understanding these concepts will enable you to identify potential vulnerabilities and implement security measures to protect your infrastructure and applications. | <ul><li><a href="https://www.youtube.com/watch?v=inWWhr5tnEA&pp=ygUcYmFzaWMgY3liZXJzZWN1cml0eSBjb25jZXB0cw%3D%3D">What Is Cyber Security?</a></li><li><a href="https://www.youtube.com/watch?v=bPVaOlJ6ln0&pp=ygUcYmFzaWMgY3liZXJzZWN1cml0eSBjb25jZXB0cw%3D%3D">Cybersecurity: Crash Course Computer Science #31</a></li></ul> |
+
+<iframe
+  width="100%"
+  height="500"
+  src="https://www.youtube.com/embed/7J9rjMbPZm4?si=FuH6jox0BE57Ip-n"
+  frameborder="0"
+  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+<!-- Links -->
+
+[Damien Burks]: ./authors/#damien-burks
