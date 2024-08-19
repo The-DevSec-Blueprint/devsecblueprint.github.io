@@ -52,6 +52,7 @@ sidebar_position: 4
          ports:
            - "9090:9090"
          restart: always
+         network_mode: host
 
      volumes:
        prometheus_data:
@@ -81,10 +82,15 @@ sidebar_position: 4
        evaluation_interval: 15s
 
      scrape_configs:
-       - job_name: 'prometheus'
-         static_configs:
-           - targets: ['localhost:9090']
+      - job_name: 'cadvisor'
+        static_configs:
+          - targets: ['localhost:8080']
+
+      - job_name: 'node_exporter'
+        static_configs:
+          - targets: ['localhost:9100']
      ```
+     >**NOTE**: This will configure Prometheus to scrape information from the running Docker containers within the environment.
 
 4. **Run Prometheus with Docker-Compose**
 

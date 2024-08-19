@@ -54,7 +54,8 @@ sidebar_position: 4
          volumes:
            - grafana_data:/var/lib/grafana
          restart: always
-
+         network_mode: host
+         
      volumes:
        grafana_data:
      ```

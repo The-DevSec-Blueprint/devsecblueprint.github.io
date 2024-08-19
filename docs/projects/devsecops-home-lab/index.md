@@ -33,7 +33,7 @@ You can take a look at this video to really understand the specifications of my 
 
 ## What You'll Learn
 
-By completed this project fully, you will gain hands-on experience (practical) om setting up a DevSecOps environment, including:
+By completed this project fully, you will gain hands-on experience (practical) on setting up a DevSecOps environment, such as:
 
 - Containerization: Deploying and managing applications in Docker containers.
 - Monitoring and Logging: Using Prometheus to monitor application health and performance.
