@@ -1,8 +1,14 @@
 ---
 id: install-config-gitea
-title: Gitea - Installation and Configuration
-sidebar_position: 3
+title: Gitea
+sidebar_position: 2
 ---
+
+## Overview
+
+>This installation happens on the dsb-hub.
+
+According to [Gitea]'s documentation, Gitea is a painless self-hosted all-in-one software development service, including Git hosting, code review, team collaboration, package registry and CI/CD. It's open source under MIT license. It is designed to be lightweight, easy to use, and highly customizable, making it an ideal choice for both small teams and large organizations.
 
 ## **Prerequisites**
 
@@ -138,6 +144,16 @@ sidebar_position: 3
      sudo snap start gitea
      ```
 
+   - Configure web hooks:
+
+    ```bash
+    sudo nano /var/snap/gitea/common/conf/app.ini
+
+    # Add this inside of the file
+    [webhook]
+    ALLOWED_HOST_LIST = localhost, 127.0.0.1
+    ```
+
 ## **Configuration Steps**
 
 8. **Configure Gitea:**
@@ -154,3 +170,6 @@ sidebar_position: 3
 10. **You’re Done!**
     - Congratulations! Gitea is now successfully installed and configured on your server.
       ![Success Screenshot](/img/projects/devsecops-home-lab/installing-gitea/image-2.png)
+
+<!-- Sources -->
+[Gitea]: https://about.gitea.com/products/gitea/

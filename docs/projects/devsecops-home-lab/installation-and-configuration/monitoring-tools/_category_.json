@@ -1,0 +1,8 @@
+{
+    "label": "Monitoring Tools",
+    "position": 5,
+    "link": {
+      "type": "generated-index",
+      "description": "Monitoring Tools installing and configuration."
+    }
+}

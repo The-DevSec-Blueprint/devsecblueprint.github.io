@@ -138,3 +138,38 @@ sidebar_position: 4
     ```
 
     ![SonarQube Interface](/img/projects/devsecops-home-lab/installing-security-tools/image.png)
+
+## Configuring Sonarqube
+
+- Log into Sonarqube and type in password, which is admin/admin
+
+- Change your password with something new
+![alt text](../../../../../static/img/projects/devsecops-home-lab/installing-security-tools/image.png)
+
+- You should be bought to this page. Click on 'Create Project':
+![alt text](../../../../../static/img/projects/devsecops-home-lab/installing-security-tools/image-1.png)
+
+- Create local project and enter in owasp-juice-shop as display name and project key. Set branch = master
+![alt text](../../../../../static/img/projects/devsecops-home-lab/installing-security-tools/image-2.png)
+
+- Hit next and set 'Use global setting', and hit create project.
+
+From the Jenkins Dashboard, navigate to Manage Jenkins > Manage Plugins and install the SonarQube Scanner plugin.
+
+Back at the Jenkins Dashboard, navigate to Credentials > System from the left navigation.
+
+Click the Global credentials (unrestricted) link in the System table.
+
+Click Add credentials in the left navigation and add the following information:
+Kind: Secret Text
+Scope: Global
+Secret: Generate a token at User > My Account > Security in SonarQube, and copy and paste it here.
+
+Click OK.
+
+From the Jenkins Dashboard, navigate to Manage Jenkins > Configure System.
+From the SonarQube Servers section, click Add SonarQube. Add the following information:
+Name: Give a unique name to your SonarQube instance.
+Server URL: Your SonarQube instance URL.
+Credentials: Select the credentials created during step 4.
+Click Save

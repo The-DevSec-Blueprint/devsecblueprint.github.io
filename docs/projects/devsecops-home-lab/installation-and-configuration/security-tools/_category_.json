@@ -1,0 +1,8 @@
+{
+    "label": "Security Tools",
+    "position": 4,
+    "link": {
+      "type": "generated-index",
+      "description": "Security Tools installing and configuration."
+    }
+}
