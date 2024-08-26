@@ -58,8 +58,7 @@ git clone https://github.com/The-DevSec-Blueprint/juice-shop-sonarscanning.git
 2. Under **Available Plugins**, search for and install the following:
     - **Gitea**
     - **SonarQube Scanner**
-    - **Docker Pipeline**
-    - **SSH Agent**
+    - **Prometheus Metrics**
 
     ![Install Plugins](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/image-7.png)
 

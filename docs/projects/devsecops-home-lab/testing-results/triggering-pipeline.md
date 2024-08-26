@@ -1,9 +1,7 @@
 ---
-
 id: testing-pipeline  
 title: Triggering Jenkins Pipeline  
 sidebar_position: 1  
-
 ---
 
 ## Triggering the OWASP Juice Shop Pipeline in Jenkins
@@ -45,4 +43,3 @@ sidebar_position: 1
 ## Conclusion
 
 Congratulations! Your Jenkins pipeline is now set up and working. You’ve successfully triggered, monitored, and verified a build and deployment for the OWASP Juice Shop application.
-

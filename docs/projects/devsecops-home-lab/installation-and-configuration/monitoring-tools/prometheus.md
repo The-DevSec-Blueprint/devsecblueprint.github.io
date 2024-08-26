@@ -89,8 +89,14 @@ sidebar_position: 4
       - job_name: 'node_exporter'
         static_configs:
           - targets: ['localhost:9100']
+
+      - job_name: 'jenkins'
+        metrics_path: /prometheus/
+        static_configs:
+          - targets: ['<your_up_address>:8080']
      ```
-     >**NOTE**: This will configure Prometheus to scrape information from the running Docker containers within the environment.
+
+     >**NOTE**: This will configure Prometheus to scrape information from the running Docker containers within the environment and the Jenkins server.
 
 4. **Run Prometheus with Docker-Compose**
 
