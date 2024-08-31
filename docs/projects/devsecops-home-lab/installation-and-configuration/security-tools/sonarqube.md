@@ -1,8 +1,16 @@
 ---
-id: install-config-sonarqube
-title: SonarQube
-sidebar_position: 4
+id: install-config-sonarqube  
+title: SonarQube  
+sidebar_position: 4  
 ---
+
+## Overview
+
+> This installation happens on the `dsb-hub`.
+
+According to [SonarQube's Website], SonarQube is an open-source platform used to continuously inspect the quality of code in various programming languages. It is designed to detect bugs, security vulnerabilities, and code smells, providing detailed reports to help developers maintain high standards in their codebases. SonarQube is widely used in DevSecOps environments to ensure that code remains secure, maintainable, and follows industry best practices.
+
+## Prerequisites
 
 1. **Switch to the PostgreSQL User**  
    First, switch to the `postgres` user to perform database-related tasks:
@@ -56,6 +64,8 @@ sidebar_position: 4
    ```conf
    local   sonar           sonar                                   scram-sha-256 
    ```
+
+## Installation Steps
 
 6. **Download and Install SonarQube**  
    Download the SonarQube package and extract it:
@@ -139,37 +149,46 @@ sidebar_position: 4
 
     ![SonarQube Interface](/img/projects/devsecops-home-lab/installing-security-tools/image.png)
 
-## Configuring Sonarqube
+## Configuring SonarQube
 
-- Log into Sonarqube and type in password, which is admin/admin
+- Log into SonarQube and type in the default credentials (username: `admin`, password: `admin`).
 
-- Change your password with something new
-![alt text](../../../../../static/img/projects/devsecops-home-lab/installing-security-tools/image.png)
+- Change your password to something new after the first login.
+   ![alt text](../../../../../static/img/projects/devsecops-home-lab/installing-security-tools/image.png)
 
-- You should be bought to this page. Click on 'Create Project':
-![alt text](../../../../../static/img/projects/devsecops-home-lab/installing-security-tools/image-1.png)
+- You will be directed to the dashboard. Click on 'Create Project':
+   ![alt text](../../../../../static/img/projects/devsecops-home-lab/installing-security-tools/image-1.png)
 
-- Create local project and enter in owasp-juice-shop as display name and project key. Set branch = master
-![alt text](../../../../../static/img/projects/devsecops-home-lab/installing-security-tools/image-2.png)
+- Create a local project and enter `owasp-juice-shop` as the display name and project key. Set branch = `master`.
+   ![alt text](../../../../../static/img/projects/devsecops-home-lab/installing-security-tools/image-2.png)
 
-- Hit next and set 'Use global setting', and hit create project.
+- Hit next and set 'Use global setting', then hit 'Create Project'.
 
-From the Jenkins Dashboard, navigate to Manage Jenkins > Manage Plugins and install the SonarQube Scanner plugin.
+## Jenkins Integration with SonarQube
 
-Back at the Jenkins Dashboard, navigate to Credentials > System from the left navigation.
+1. From the Jenkins Dashboard, navigate to **Manage Jenkins > Manage Plugins** and install the **SonarQube Scanner** plugin.
 
-Click the Global credentials (unrestricted) link in the System table.
+2. Navigate to **Credentials > System** from the Jenkins Dashboard.
 
-Click Add credentials in the left navigation and add the following information:
-Kind: Secret Text
-Scope: Global
-Secret: Generate a token at User > My Account > Security in SonarQube, and copy and paste it here.
+3. Click the **Global credentials (unrestricted)** link in the System table.
 
-Click OK.
+4. Click **Add credentials** and add the following information:
+   - **Kind**: Secret Text
+   - **Scope**: Global
+   - **Secret**: Generate a token at **User > My Account > Security** in SonarQube, and copy and paste it here.
 
-From the Jenkins Dashboard, navigate to Manage Jenkins > Configure System.
-From the SonarQube Servers section, click Add SonarQube. Add the following information:
-Name: Give a unique name to your SonarQube instance.
-Server URL: Your SonarQube instance URL.
-Credentials: Select the credentials created during step 4.
-Click Save
+5. From the Jenkins Dashboard, navigate to **Manage Jenkins > Configure System**.
+
+6. In the **SonarQube Servers** section, click **Add SonarQube**. Add the following information:
+   - **Name**: Give a unique name to your SonarQube instance.
+   - **Server URL**: Your SonarQube instance URL.
+   - **Credentials**: Select the credentials created in step 4.
+
+7. Click **Save** to complete the integration.
+
+## You're Done
+
+You’ve successfully installed and configured SonarQube and integrated it with Jenkins. This setup allows you to continuously monitor code quality and security vulnerabilities.
+
+<!-- Sources -->
+[SonarQube's Website]: https://docs.sonarsource.com/sonarqube/latest/#what-is-sonarcloud

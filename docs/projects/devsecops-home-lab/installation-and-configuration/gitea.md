@@ -6,11 +6,11 @@ sidebar_position: 2
 
 ## Overview
 
->This installation happens on the dsb-hub.
+> This installation happens on the `dsb-hub`.
 
 According to [Gitea]'s documentation, Gitea is a painless self-hosted all-in-one software development service, including Git hosting, code review, team collaboration, package registry and CI/CD. It's open source under MIT license. It is designed to be lightweight, easy to use, and highly customizable, making it an ideal choice for both small teams and large organizations.
 
-## **Prerequisites**
+## Prerequisites
 
 1. **Install PostgreSQL:**
 
@@ -128,7 +128,7 @@ According to [Gitea]'s documentation, Gitea is a painless self-hosted all-in-one
      sudo systemctl restart nginx
      ```
 
-## **Installation Steps**
+## Installation Steps
 
 7. **Install Gitea:**
 
@@ -154,22 +154,23 @@ According to [Gitea]'s documentation, Gitea is a painless self-hosted all-in-one
     ALLOWED_HOST_LIST = localhost, 127.0.0.1
     ```
 
-## **Configuration Steps**
+## Configuration Steps
 
-8. **Configure Gitea:**
+1. **Configure Gitea:**
 
    - Open a web browser and navigate to your server's IP address or domain name.
    - Follow the on-screen instructions to configure Gitea, entering your previously created PostgreSQL database credentials when prompted.
-     ![Gitea Setup Screenshot](/img/projects/devsecops-home-lab/installing-gitea/image.png)
+     ![Gitea Setup Screenshot](/img/projects/devsecops-home-lab/installation-and-configuration/gitea-init-config.png)
 
-9. **Create an Account:**
+1. **Create an Account:**
 
     - Create an admin account to manage your Gitea instance.
-      ![Create Account Screenshot](/img/projects/devsecops-home-lab/installing-gitea/image-1.png)
+      ![Create Account Screenshot](/img/projects/devsecops-home-lab/installation-and-configuration/gitea-create-account.png)
 
-10. **You’re Done!**
-    - Congratulations! Gitea is now successfully installed and configured on your server.
-      ![Success Screenshot](/img/projects/devsecops-home-lab/installing-gitea/image-2.png)
+## You're Done
+
+Gitea is now successfully installed and configured on your server. Feel free to log in and take a look around.
+![Success Screenshot](/img/projects/devsecops-home-lab/installation-and-configuration/gitea-success-account-creation.png)
 
 <!-- Sources -->
 [Gitea]: https://about.gitea.com/products/gitea/

@@ -1,10 +1,16 @@
 ---
-id: install-config-grafana
-title: Grafana
-sidebar_position: 4
+id: install-config-grafana  
+title: Grafana  
+sidebar_position: 4  
 ---
 
-## **Prerequisites**
+## Overview
+
+> This installation happens on the `dsb-node-01`.
+
+According to [Grafana's Website], Grafana is an open-source platform for monitoring and observability. It allows you to query, visualize, alert on, and understand your metrics no matter where they are stored. Grafana provides a powerful and elegant way to create, explore, and share dashboards that integrate data from various sources, making it an essential tool for DevOps teams to monitor their infrastructure, applications, and services in real time.
+
+## Prerequisites
 
 1. **Install Docker**
 
@@ -24,7 +30,7 @@ sidebar_position: 4
      sudo reboot
      ```
 
-## **Installation Steps**
+## Installation Steps
 
 1. **Create a Docker-Compose File for Grafana**
 
@@ -103,4 +109,9 @@ sidebar_position: 4
 
    ![Update Password](/img/projects/devsecops-home-lab/installing-monitoring-tools/image-3.png)
 
-**You're done!** You’ve successfully installed and configured Grafana on your system.
+## You're Done
+
+You’ve successfully installed and configured Grafana on your system.
+
+<!-- Sources -->
+[Grafana's Website]: https://grafana.com/docs/grafana/latest/getting-started/what-is-grafana/

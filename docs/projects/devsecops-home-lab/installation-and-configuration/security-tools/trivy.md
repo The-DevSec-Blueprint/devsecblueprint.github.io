@@ -1,42 +1,48 @@
 ---
-id: install-config-trivy
-title: Trivy
-sidebar_position: 4
+id: install-config-trivy  
+title: Trivy  
+sidebar_position: 4  
 ---
 
-## **Installation Steps**
+## Overview
 
-1. **Configure and Install Package**
+> This installation happens on the `dsb-hub`.
 
-   - Install required packages and add the Trivy repository key:
+According to [Trivy's GitHub Repository], Trivy is a comprehensive, easy-to-use open-source vulnerability scanner. It detects vulnerabilities in OS packages, container images, file systems, and Git repositories. Additionally, Trivy can identify configuration issues and hard-coded secrets, making it an essential tool for DevSecOps practices. This guide will walk you through the steps to install and configure Trivy on your system.
+
+## Installation Steps
+
+1. Configure and Install Package
+
+- Install required packages and add the Trivy repository key:
 
      ```bash
      sudo apt-get install wget apt-transport-https gnupg
      wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | sudo tee /usr/share/keyrings/trivy.gpg > /dev/null
      ```
 
-   - Add the Trivy repository to your sources list:
+- Add the Trivy repository to your sources list:
 
      ```bash
      echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main" | sudo tee -a /etc/apt/sources.list.d/trivy.list
      ```
 
-   - Update your package list and install Trivy:
+- Update your package list and install Trivy:
 
      ```bash
      sudo apt-get update
      sudo apt-get install trivy
      ```
 
-2. **Check if Trivy is Installed Successfully**
+2. Check if Trivy is Installed Successfully
 
-   - Verify that Trivy is installed and running correctly by running the `trivy` command:
+- Verify that Trivy is installed and running correctly by running the `trivy` command:
 
      ```bash
      trivy
      ```
 
-   - You should see output similar to the following, which confirms that Trivy is installed and provides usage instructions:
+- You should see output similar to the following, which confirms that Trivy is installed and provides usage instructions:
 
      ```
      Scanner for vulnerabilities in container images, file systems, and Git repositories, as well as for configuration issues and hard-coded secrets
@@ -94,5 +100,9 @@ sidebar_position: 4
        -v, --version                   show version
      ```
 
-**You're done!** Trivy is now installed and ready to be used for scanning vulnerabilities in container images, file systems, and more.
-```
+## You're Done
+
+Trivy is now installed and ready to be used for scanning vulnerabilities in container images, file systems, and more. With Trivy, you can ensure that your applications are secure and free from known vulnerabilities before deploying them to production.
+
+<!-- Sources -->
+[Trivy's GitHub Repository]: https://github.com/aquasecurity/trivy

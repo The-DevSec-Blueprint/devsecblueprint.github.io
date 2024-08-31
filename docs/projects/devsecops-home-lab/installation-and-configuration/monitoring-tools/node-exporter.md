@@ -1,16 +1,40 @@
+---
+id: install-config-node-exporter  
+title: Node Exporter
+sidebar_position: 2  
+---
 
+## Overview
 
-```
+> This installation happens on the `dsb-node-01`.
+
+According to [Prometheus' Website], Node Exporter is an essential tool for monitoring the hardware and OS-level metrics of your Linux systems. It is part of the Prometheus ecosystem and is widely used to gather metrics such as CPU usage, memory usage, disk I/O, and more.
+
+## Installation Steps
+
+1. Create Necessary Directories
+
+First, navigate to your `apps` directory and create a new directory for Node Exporter:
+
+```bash
 cd ~/apps
 mkdir node-exporter
 ```
 
-```
+1. Create Docker Compose File
+
+Navigate to the `node-exporter` directory and create a `docker-compose.yml` file:
+
+```bash
+cd ~/apps/node-exporter
 touch docker-compose.yml
 ```
 
-- copy into file
-```
+1. Configure Docker Compose File
+
+Edit the `docker-compose.yml` file and add the following configuration:
+
+```yaml
 version: '3.8'
 
 services:
@@ -31,8 +55,15 @@ services:
     network_mode: host
 ```
 
-```
+1. Deploy Node Exporter
+
+Finally, use Docker Compose to deploy Node Exporter:
+
+```bash
 docker-compose up -d
 ```
 
-done.
+## You're Done
+
+<!-- Sources -->
+[Prometheus' Website]: https://prometheus.io/docs/guides/node-exporter/

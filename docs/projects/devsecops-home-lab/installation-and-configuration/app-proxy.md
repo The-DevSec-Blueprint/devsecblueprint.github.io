@@ -4,9 +4,15 @@ title: Nginx Reverse Proxy
 sidebar_position: 4
 ---
 
+## Overview
+
+> This installation will happen on the `dsb-node-01`.
+
 In this guide, we will set up a reverse proxy for your application using Nginx. This will allow you to manage incoming traffic more effectively and forward requests to your application running on a different port.
 
-## Step 1: Install Nginx
+## Installation Steps
+
+1. **Install Nginx**
 
 To begin, you need to install Nginx on your server. This can be done using the following command:
 
@@ -16,7 +22,7 @@ sudo apt install nginx
 
 This command will install Nginx along with any required dependencies.
 
-## Step 2: Configure Nginx
+## Configuration Steps
 
 After installing Nginx, you need to configure it to act as a reverse proxy for your application.
 
@@ -72,6 +78,6 @@ After installing Nginx, you need to configure it to act as a reverse proxy for y
    sudo systemctl restart nginx
    ```
 
-## Conclusion
+## You're Done
 
-By following these steps, you have successfully set up Nginx as a reverse proxy for your application. This configuration allows Nginx to handle incoming HTTP requests and forward them to your application, providing a layer of abstraction and potentially improving security and performance.
+You've setup and configured the Nginx reverse proxy!
