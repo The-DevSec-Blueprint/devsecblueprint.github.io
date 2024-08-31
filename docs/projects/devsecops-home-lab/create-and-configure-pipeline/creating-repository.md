@@ -30,7 +30,7 @@ git clone https://github.com/The-DevSec-Blueprint/juice-shop-sonarscanning.git
 
 1. Log into your Gitea instance and navigate to create a new repository.
 
-    ![Create New Project](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/gitea-create-repository.png)
+    ![Create New Project](/img/img/projects/devsecops-home-lab/create-configure-pipeline/gitea-create-repository.png)
 
 2. Fill out the necessary information:
     - **Repository name**: `owasp-juice-shop`
@@ -38,13 +38,13 @@ git clone https://github.com/The-DevSec-Blueprint/juice-shop-sonarscanning.git
     - **Description**: *(Optional)*
     - **Default branch**: `master`
 
-    ![Repository Details](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/gitea-repo-details.png)
+    ![Repository Details](/img/img/projects/devsecops-home-lab/create-configure-pipeline/gitea-repo-details.png)
 
 3. Click on the **Create Repository** button.
 
 4. Confirm that the repository has been created successfully.
 
-    ![Repository Created](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/gitea-create-project.png)
+    ![Repository Created](/img/img/projects/devsecops-home-lab/create-configure-pipeline/gitea-create-project.png)
 
 ## Step 3: Point the Local Repository to Gitea
 
@@ -61,13 +61,13 @@ git push -u origin master
 
 After pushing your code, Gitea might prompt you to authorize your application.
 
-![Authorize Application](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/gitea-authorize-application.png)
+![Authorize Application](/img/img/projects/devsecops-home-lab/create-configure-pipeline/gitea-authorize-application.png)
 
 ## Step 5: Confirm the Changes
 
 Ensure that your changes have been pushed to the Gitea repository.
 
-![Changes Confirmed](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/gitea-repo-populated.png)
+![Changes Confirmed](/img/img/projects/devsecops-home-lab/create-configure-pipeline/gitea-repo-populated.png)
 
 ## Step 6: Remove GitHub Workflows Directory
 
