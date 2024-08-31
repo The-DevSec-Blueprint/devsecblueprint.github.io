@@ -9,7 +9,7 @@ Author: [Damien Burks]
 
 ## Overview
 
-Before diving into the core concepts and theories of DevSecOps, it's important to build a solid foundation with some essential background knowledge. The topics/concepts that I am going to recommend will be extremely beneficial for you to understand, because it's the foundational pieces of DevSecOps. 
+Before diving into the core concepts and theories of DevSecOps, it's important to build a solid foundation with some essential background knowledge. The topics/concepts that I am going to recommend will be extremely beneficial for you to understand, because it's the foundational pieces of DevSecOps.
 
 ## Concepts You'll Need To Know
 

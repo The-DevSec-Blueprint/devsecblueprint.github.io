@@ -27,7 +27,7 @@ By following The DevSec Blueprint, you'll gain:
 
 ## Why Choose The DevSec Blueprint?
 
-- **Free and Open Source**: Accessible to everyone, this blueprint is community-driven and constantly updated to reflect the latest in DevSecOps.
+- **Free and Open Source**: Accessible to everyone, this blueprint is community-driven and constantly updated to reflect the latest in DevSecOps with projects included.
 - **Step-by-Step Guidance**: Each section is carefully crafted to build on the previous one, ensuring you develop a strong and cohesive understanding of DevSecOps.
 - **Practical Focus**: With the [projects] that we reference and we've created, you’ll not only learn the theory but also gain practical experience that you can showcase in your portfolio.
 - **Community Support**: Join our community forums (TBD) and discussions to connect with other learners, share insights, and get help when you need it.
