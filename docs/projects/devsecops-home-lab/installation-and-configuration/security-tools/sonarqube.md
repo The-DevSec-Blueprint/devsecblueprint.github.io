@@ -143,24 +143,24 @@ According to [SonarQube's Website], SonarQube is an open-source platform used to
 11. **Confirm SonarQube is Running**  
     Verify that SonarQube is running by opening your web browser and navigating to:
 
-    ```
+    ```text
     http://your_ip_address:9000
     ```
 
-    ![SonarQube Interface](/img/projects/devsecops-home-lab/installing-security-tools/image.png)
+    ![SonarQube Interface](/img/projects/devsecops-home-lab/installation-and-configuration/sonarqube-login-dashboard.png)
 
 ## Configuring SonarQube
 
 - Log into SonarQube and type in the default credentials (username: `admin`, password: `admin`).
 
 - Change your password to something new after the first login.
-   ![alt text](../../../../../static/img/projects/devsecops-home-lab/installing-security-tools/image.png)
+   ![alt text](/img/projects/devsecops-home-lab/installation-and-configuration/sonarqube-change-admin-creds.png)
 
 - You will be directed to the dashboard. Click on 'Create Project':
-   ![alt text](../../../../../static/img/projects/devsecops-home-lab/installing-security-tools/image-1.png)
+   ![alt text](/img/projects/devsecops-home-lab/installation-and-configuration/sonarqube-dashboard.png)
 
 - Create a local project and enter `owasp-juice-shop` as the display name and project key. Set branch = `master`.
-   ![alt text](../../../../../static/img/projects/devsecops-home-lab/installing-security-tools/image-2.png)
+   ![alt text](/img/projects/devsecops-home-lab/installation-and-configuration/sonarqube-project-creation.png)
 
 - Hit next and set 'Use global setting', then hit 'Create Project'.
 

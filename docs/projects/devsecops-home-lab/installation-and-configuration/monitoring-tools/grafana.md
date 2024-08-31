@@ -87,27 +87,27 @@ According to [Grafana's Website], Grafana is an open-source platform for monitor
 
    - Check if Grafana is up and running by visiting `http://localhost:3000` in your web browser.
 
-   ![Grafana Login](/img/projects/devsecops-home-lab/installing-monitoring-tools/image.png)
+   ![Grafana Login](../../../../../static/img/projects/devsecops-home-lab/installation-and-configuration/grafana-login-dashboard.png)
 
-## **Configuration Steps**
+## Configuration Steps
 
 1. **Log into the Dashboard**
 
    - Use your admin username and password to log into the Grafana dashboard.
 
-   ![Grafana Dashboard](/img/projects/devsecops-home-lab/installing-monitoring-tools/image-1.png)
+   ![Grafana Dashboard](../../../../../static/img/projects/devsecops-home-lab/installation-and-configuration/grafana-admin-pass-login.png)
 
 2. **Update Admin Username**
 
    - Click on your profile and update the admin username.
 
-   ![Update Username](/img/projects/devsecops-home-lab/installing-monitoring-tools/image-2.png)
+   ![Update Username](../../../../../static/img/projects/devsecops-home-lab/installation-and-configuration/grafana-profile-config.png)
 
 3. **Update Admin Password**
 
    - Change your password for enhanced security.
 
-   ![Update Password](/img/projects/devsecops-home-lab/installing-monitoring-tools/image-3.png)
+   ![Update Password](../../../../../static/img/projects/devsecops-home-lab/installation-and-configuration/grafana-change-admin-pass.png)
 
 ## You're Done
 

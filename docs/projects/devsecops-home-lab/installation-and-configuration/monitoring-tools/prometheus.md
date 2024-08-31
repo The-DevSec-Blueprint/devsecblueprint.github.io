@@ -117,7 +117,7 @@ According to [Prometheus' Website], Prometheus is an open-source systems monitor
 
 - Check if Prometheus is up and running by visiting `http://localhost:9090` in your web browser.
 
-   ![Prometheus Dashboard](/img/projects/devsecops-home-lab/installing-monitoring-tools/image-4.png)
+   ![Prometheus Dashboard](/img/projects/devsecops-home-lab/installation-and-configuration/prometheus-dashboard.png)
 
 ## You're Done
 

@@ -3,6 +3,6 @@
     "position": 4,
     "link": {
       "type": "generated-index",
-      "description": "Security Tools installing and configuration."
+      "description": "In this section, we will install the security tools for our pipeline."
     }
 }

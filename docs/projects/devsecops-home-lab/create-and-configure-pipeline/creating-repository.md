@@ -5,6 +5,10 @@ description: A guide to setting up the OWASP Juice Shop project with Sonar Scann
 sidebar_position: 1
 ---
 
+## Overview
+
+In this section of the guide, you will learn how to set up a Jenkins pipeline for the OWASP Juice Shop project, integrating it with Gitea for version control, SonarQube for static code analysis, and Docker for containerization. The process includes cloning the codebase, configuring access tokens in Gitea, installing necessary Jenkins plugins, creating a Jenkins pipeline, and setting up webhooks and SSH keys for secure communication between your systems. By the end of this guide, your pipeline will be fully automated to handle code quality checks, security scans, and deployments.
+
 ## Prerequisites
 
 Before starting, ensure that you have the following:
@@ -26,7 +30,7 @@ git clone https://github.com/The-DevSec-Blueprint/juice-shop-sonarscanning.git
 
 1. Log into your Gitea instance and navigate to create a new repository.
 
-    ![Create New Project](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/image.png)
+    ![Create New Project](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/gitea-create-repository.png)
 
 2. Fill out the necessary information:
     - **Repository name**: `owasp-juice-shop`
@@ -34,13 +38,13 @@ git clone https://github.com/The-DevSec-Blueprint/juice-shop-sonarscanning.git
     - **Description**: *(Optional)*
     - **Default branch**: `master`
 
-    ![Repository Details](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/image-2.png)
+    ![Repository Details](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/gitea-repo-details.png)
 
 3. Click on the **Create Repository** button.
 
 4. Confirm that the repository has been created successfully.
 
-    ![Repository Created](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/image-1.png)
+    ![Repository Created](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/gitea-create-project.png)
 
 ## Step 3: Point the Local Repository to Gitea
 
@@ -57,13 +61,13 @@ git push -u origin master
 
 After pushing your code, Gitea might prompt you to authorize your application.
 
-![Authorize Application](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/image.png)
+![Authorize Application](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/gitea-authorize-application.png)
 
 ## Step 5: Confirm the Changes
 
 Ensure that your changes have been pushed to the Gitea repository.
 
-![Changes Confirmed](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/image-3.png)
+![Changes Confirmed](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/gitea-repo-populated.png)
 
 ## Step 6: Remove GitHub Workflows Directory
 

@@ -5,90 +5,58 @@ description: A step-by-step guide to creating a Jenkins pipeline for OWASP Juice
 sidebar_position: 2
 ---
 
-## Overview
-
-In this guide, you will learn how to set up a Jenkins pipeline for the OWASP Juice Shop project, integrating it with Gitea for version control, SonarQube for static code analysis, and Docker for containerization. The process includes cloning the codebase, configuring access tokens in Gitea, installing necessary Jenkins plugins, creating a Jenkins pipeline, and setting up webhooks and SSH keys for secure communication between your systems. By the end of this guide, your pipeline will be fully automated to handle code quality checks, security scans, and deployments.
-
-## Step 1: Clone the Codebase
-
-On your local machine, clone the juice-shop-sonarscanning repository:
-
-```bash
-git clone https://github.com/The-DevSec-Blueprint/juice-shop-sonarscanning.git
-```
-
-## Step 2: Create a New Project in Gitea
-
-1. Log into your Gitea instance and create a new repository.
-
-    ![Create New Project](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/image.png)
-
-2. Fill in the repository details:
-    - **Repository name**: `owasp-juice-shop`
-    - **Visibility**: `public`
-    - **Description**: *(Optional)*
-    - **Default branch**: `master`
-
-    ![Repository Details](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/image-2.png)
-
-3. Click on the **Create Repository** button.
-
-4. Confirm the repository creation.
-
-    ![Repository Created](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/image-1.png)
-
-## Step 3: Configure Access Token in Gitea
+## Step 1: Configure Access Token in Gitea
 
 1. In Gitea, click on your user avatar at the top right, then select **Settings** > **Applications**.
 
-    ![Applications](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/image-5.png)
+    ![Applications](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/gitea-manage-access-tokens.png)
 
 2. Enter a token name (e.g., `Jenkins`), set it to `Private`, and select all permissions as READ/WRITE. Click **Generate Token**.
 
-    ![Generate Token](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/image-24.png)
+    ![Generate Token](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/gitea-configure-token-permissions.png)
 
 3. Copy the token and store it in a secure place. This token will be used for Jenkins authentication.
 
-## Step 4: Install Required Plugins in Jenkins
+## Step 2: Install Required Plugins in Jenkins
 
 1. Log into Jenkins. From the **Dashboard**, click **Manage Jenkins** > **Manage Plugins**.
 
-    ![Manage Plugins](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/image-6.png)
+    ![Manage Plugins](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/jenkins-manage-plugins.png)
 
 2. Under **Available Plugins**, search for and install the following:
     - **Gitea**
     - **SonarQube Scanner**
     - **Prometheus Metrics**
 
-    ![Install Plugins](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/image-7.png)
+    ![Install Plugins](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/jenkins-install-plugins.png)
 
-## Step 5: Create Jenkins Pipeline
+## Step 3: Create Jenkins Pipeline
 
 1. From the Jenkins **Dashboard**, click **New Item**.
 
-    ![New Item](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/image-4.png)
+    ![New Item](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/jenkins-dashboard.png)
 
 2. Select **Organization Folder** and name it (e.g., `OWASP Juice Shop Pipeline`).
 
-    ![Organization Folder](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/image-19.png)
+    ![Organization Folder](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/jenkins-organization-folder.png)
 
 3. Scroll down to **Repository Sources** and select **Gitea Organization**.
 
-    ![Repository Sources](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/image-20.png)
+    ![Repository Sources](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/jenkins-configure-gitea-pipeline.png)
 
 4. Under **Credentials**, click **Add**. Select the organization folder name, set the **Kind** to **Gitea Personal Access Token (PAT)**, and paste the token generated from Gitea.
 
-    ![Gitea PAT](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/image-22.png)
+    ![Gitea PAT](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/jenkins-configure-gitea-pat.png)
 
 5. Set the **Owner** to your Gitea username, and then click **Apply** and **Save**.
 
-    ![Save Configuration](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/image-23.png)
+    ![Save Configuration](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/jenkins-config-gitea-organization.png)
 
-## Step 6: Configure Webhook in Gitea
+## Step 4: Configure Webhook in Gitea
 
 1. In Jenkins, go to **Manage Jenkins** > **Configure System**. Scroll down to **Gitea Servers** and add your Gitea server details.
 
-    ![Gitea Server](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/image-15.png)
+    ![Gitea Server](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/jenkins-config-gitea-server.png)
 
     - **Discover branches**: Only branches filed as PRs or master/main branch.
     - **Discover pull requests from origin**: Both the current pull request revision and the pull request merged with the current target branch revision.
@@ -97,7 +65,7 @@ git clone https://github.com/The-DevSec-Blueprint/juice-shop-sonarscanning.git
 
 3. In Gitea, navigate to the project, click on **Settings** > **Webhooks**.
 
-    ![Webhooks](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/image-16.png)
+    ![Webhooks](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/gitea-config-webhook.png)
 
 4. Click **Add Webhook**, then select **Gitea**. Fill out the form:
     - **URL**: `<http://localhost:8080/gitea-webhook/post>`
@@ -105,11 +73,11 @@ git clone https://github.com/The-DevSec-Blueprint/juice-shop-sonarscanning.git
     - **Content Type**: `application/json`
     - **Branch filter**: `*`
 
-    ![Add Webhook](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/image-17.png)
+    ![Add Webhook](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/gitea-add-webhook-jenkins.png)
 
 5. Click **Add Webhook** to save the configuration.
 
-## Step 7: Configure SSH Keys
+## Step 5: Configure SSH Keys
 
 1. On your local machine (DSB Hub), generate an SSH key pair:
 
@@ -137,14 +105,10 @@ git clone https://github.com/The-DevSec-Blueprint/juice-shop-sonarscanning.git
 
 3. In Jenkins, go to **Manage Jenkins** > **Credentials** > **System** > **Global Credentials (unrestricted)**. Select **Add Credentials** and choose **SSH Username with private key**.
 
-    ![SSH Credentials](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/image-25.png)
+    ![SSH Credentials](../../../../static/img/projects/devsecops-home-lab/create-configure-pipeline/jenkins-config-ssh-username.png)
 
 4. Fill out the form and hit **Create** to store your SSH credentials.
 
 ## Conclusion
 
 You've now successfully set up a Jenkins pipeline for the OWASP Juice Shop project with Gitea, SonarQube, and Docker integration. Your pipeline is configured to handle code quality checks, security scans, and deployments, ensuring that your application maintains a high standard throughout the development lifecycle.
-
-```
-
-This structure introduces an overview section that provides context and sets expectations for the steps ahead, making the guide more user-friendly and easier to follow. Let me know if you need further modifications!

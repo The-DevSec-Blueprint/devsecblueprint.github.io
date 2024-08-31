@@ -26,7 +26,7 @@ This installation process is for setting up a Jenkins performance and health ove
    - Paste the JSON code or upload the JSON file.
    - Complete the import process.
 
-   ![Dashboard Image](image.png)
+   ![Dashboard Image](../../../../static/img/projects/devsecops-home-lab/testing-results/grafana-import-dashboard.png)
 
 ## Installation Steps
 
@@ -41,7 +41,7 @@ This installation process is for setting up a Jenkins performance and health ove
    - Either paste the JSON code or upload the JSON file you obtained earlier.
    - Follow the prompts to complete the import.
 
-## **Configuration Steps**
+## Configuration Steps
 
 3. **Customize the Dashboard:**
 
