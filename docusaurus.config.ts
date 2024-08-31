@@ -101,7 +101,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} The DevSec Blueprint LLC - Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} The DevSec Blueprint - Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
