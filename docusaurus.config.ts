@@ -37,8 +37,6 @@ const config: Config = {
           sidebarPath: "./sidebars.ts",
           routeBasePath: '/',
           path: "docs",
-          editUrl:
-            "https://github.com/The-DevSec-Blueprint/devsecblueprint.github.io",
         },
         blog: false,
         theme: {
