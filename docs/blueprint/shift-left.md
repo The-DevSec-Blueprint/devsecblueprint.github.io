@@ -1,7 +1,7 @@
 ---
 id: intro-shifting-left
 title: Shifting Left Overview
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 Coming Soon!

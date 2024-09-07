@@ -1,7 +1,7 @@
 ---
 id: intro-appsec
-title: Application Security Overview
-sidebar_position: 3
+title: Application Security
+sidebar_position: 5
 ---
 
 Coming Soon!

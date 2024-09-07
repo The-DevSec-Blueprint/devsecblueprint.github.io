@@ -1,6 +1,6 @@
 ---
 id: intro-cicd
-title: CI/CD Overview
+title: CI/CD
 sidebar_position: 3
 ---
 

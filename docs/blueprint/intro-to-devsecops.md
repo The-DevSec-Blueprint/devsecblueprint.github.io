@@ -1,7 +1,7 @@
 ---
 id: intro-devsecops
-title: DevSecOps Overview
-sidebar_position: 3
+title: Introduction to DevSecOps
+sidebar_position: 1
 ---
 
 Coming Soon!
