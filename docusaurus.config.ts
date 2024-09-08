@@ -71,7 +71,7 @@ const config: Config = {
           href: "https://github.com/The-DevSec-Blueprint/devsecblueprint.github.io",
           position: "right",
           className: "header-github-link",
-          "aria-label": "GitHub repository",
+          "aria-label": "GitHub Repository",
         },
       ],
     },
