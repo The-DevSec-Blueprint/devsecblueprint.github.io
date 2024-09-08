@@ -23,7 +23,7 @@ By following The DevSec Blueprint, you'll gain:
 - **Foundational Knowledge**: Understand the core principles of DevSecOps, Cybersecurity, and the Software Development Life Cycle (SDLC), and even the Cloud.
 - **Core DevSecOps Skills**: Learn how to secure and automate infrastructure, build secure CI/CD pipelines, and implement robust monitoring and incident response practices.
 - **Cloud DevSecOps Expertise**: Transition to cloud-based environments, mastering the security challenges unique to cloud infrastructure, including containerization, serverless security, and compliance as code.
-- **Hands-On Experience**: Apply your knowledge by completing capstone projects that combines on-prem and cloud environments using your own homelab or cloud-lab setup.
+- **Hands-On Experience**: Apply your knowledge by completing projects that combines on-prem and cloud environments using your own homelab or cloud-lab setup.
 
 ## Why Choose The DevSec Blueprint?
 
