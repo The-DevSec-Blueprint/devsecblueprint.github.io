@@ -1,7 +1,7 @@
 ---
 id: config-app-proxy
 title: Nginx Reverse Proxy
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 ## Overview
