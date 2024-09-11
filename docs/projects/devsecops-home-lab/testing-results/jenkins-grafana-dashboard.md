@@ -6,7 +6,7 @@ sidebar_position: 2
 
 ## Overview
 
-This installation process is for setting up a Jenkins performance and health overview dashboard in Grafana.
+This installation process is for setting up a Jenkins performance and health overview dashboard in Grafana for monitoring purposes.
 
 ## Prerequisites
 
