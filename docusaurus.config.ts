@@ -37,8 +37,6 @@ const config: Config = {
           sidebarPath: "./sidebars.ts",
           routeBasePath: '/',
           path: "docs",
-          editUrl:
-            "https://github.com/The-DevSec-Blueprint/devsecblueprint.github.io",
         },
         blog: false,
         theme: {
@@ -71,8 +69,9 @@ const config: Config = {
         },
         {
           href: "https://github.com/The-DevSec-Blueprint/devsecblueprint.github.io",
-          label: "GitHub",
           position: "right",
+          className: "header-github-link",
+          "aria-label": "GitHub Repository",
         },
       ],
     },
