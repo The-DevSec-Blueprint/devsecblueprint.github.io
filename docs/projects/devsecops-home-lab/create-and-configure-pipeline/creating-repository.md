@@ -91,26 +91,21 @@ pipeline {
     environment {
        SONAR_TOKEN = credentials('sonar-analysis')
        SONAR_PROJECT_KEY = 'owasp-juice-shop'
+       DOCKER_IMAGE_NAME = 'owasp-juice-shop'
+       NEXUS_DOCKER_REGISTRY = '10.0.0.22:8082'
+       NEXUS_DOCKER_PUSH_INDEX = '10.0.0.22:8083'
+       NEXUS_DOCKER_PUSH_PATH = 'repository/docker-host'
     }
 
     stages {
         stage('Clone') {
             steps {
-                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'Gitea PAT', url: 'http://<your_gitea_server_url>/damien/owasp-juice-shop.git']])
+                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'Gitea PAT', url: 'http://10.0.0.22/damien/owasp-juice-shop.git']])
             }
         }
-        stage('Build and Install') {
-            parallel {
-                stage('NPM Build') {
-                    steps {
-                        sh 'npm install'
-                    }
-                }
-                stage('Docker Compile') {
-                    steps {
-                        sh 'docker build -t my-app:${BUILD_NUMBER} .'
-                    }
-                }
+        stage('Build') {
+            steps {
+                sh 'docker build -t ${DOCKER_IMAGE_NAME}:${BUILD_NUMBER} .'
             }
         }
         stage('Security Scan'){
@@ -118,7 +113,7 @@ pipeline {
                 stage('Sonar Scan') {
                     steps {
                         script {
-                            try {
+                            try{
                                 withSonarQubeEnv(installationName: 'Sonar Server', credentialsId: 'sonar-analysis') {
                                     sh '''
                                     docker run --rm \
@@ -132,8 +127,9 @@ pipeline {
                                     '''
                                 }
                             } catch (Exception e) {
-                                echo "Quality Gate check has failed: ${e}"
-                                currentBuild.result = 'UNSTABLE'
+                                // Handle the error
+                                echo "Quality Qate check has failed: ${e}"
+                                currentBuild.result = 'UNSTABLE' // Mark the build as unstable instead of failing
                             }
                         }
                     }
@@ -141,18 +137,23 @@ pipeline {
                 stage('Security Scan') {
                     steps {
                         sh '''
-                            trivy image --severity HIGH,CRITICAL my-app:${BUILD_NUMBER}
+                            trivy image --severity HIGH,CRITICAL ${DOCKER_IMAGE_NAME}:${BUILD_NUMBER}
                         '''
                     }
                 }
             }
         }
-        stage('Push To Registry') {
+        stage('Publish') {
             steps {
-                sh '''
-                    docker tag my-app:${BUILD_NUMBER} <your_server_ip>:5000/my-app:latest
-                    docker push <your_server_ip>:5000/my-app:latest
-                '''
+                script {
+                    withCredentials([usernamePassword(credentialsId: 'nexus', passwordVariable: 'NEXUS_PASSWORD', usernameVariable: 'NEXUS_USERNAME')]) {
+                        sh """
+                        docker login ${NEXUS_DOCKER_PUSH_INDEX} -u $NEXUS_USERNAME -p $NEXUS_PASSWORD
+                        docker tag ${DOCKER_IMAGE_NAME}:${BUILD_NUMBER} ${NEXUS_DOCKER_PUSH_INDEX}/${NEXUS_DOCKER_PUSH_PATH}/${DOCKER_IMAGE_NAME}:latest
+                        docker push ${NEXUS_DOCKER_PUSH_INDEX}/${NEXUS_DOCKER_PUSH_PATH}/${DOCKER_IMAGE_NAME}:latest
+                        """
+                    }
+                }
             }
         }
         stage('Deploy') {
@@ -160,11 +161,12 @@ pipeline {
             steps {
                 script {
                         echo 'Deploying to DSB Node 01'
+                        // Port 3000 is already in use, use 6000 for this application
                         sh '''
-                        docker pull <your_server_ip>:5000/my-app:latest
-                        docker stop my-app || true
-                        docker rm my-app || true
-                        docker run -d --name my-app -p 8084:3000 <your_server_ip>:5000/my-app:latest
+                        docker pull ${NEXUS_DOCKER_PUSH_INDEX}/${NEXUS_DOCKER_PUSH_PATH}/${DOCKER_IMAGE_NAME}:latest
+                        docker stop ${DOCKER_IMAGE_NAME} || true
+                        docker rm ${DOCKER_IMAGE_NAME} || true
+                        docker run -d --name ${DOCKER_IMAGE_NAME} -p 8084:3000 ${NEXUS_DOCKER_PUSH_INDEX}/${NEXUS_DOCKER_PUSH_PATH}/${DOCKER_IMAGE_NAME}:latest
                         '''
                 }
             }
@@ -172,21 +174,24 @@ pipeline {
     }
     post {
         always {
-            sh 'docker image prune -f'
             cleanWs()
         }
     }
-
 }
 ```
 
-This pipeline will:
+This pipeline performs the following steps:
 
-- Clone the repository from Gitea.
-- Build the project using NPM and Docker.
-- Perform security scans using SonarQube and Trivy.
-- Push the Docker image to a registry.
-- Deploy the application to a server.
+1. **Clone the Repository**: Pulls the `owasp-juice-shop` project from a Gitea repository.
+2. **Build the Application**: Builds a Docker image of the application and tags it with the build number.
+3. **Run Security Scans**:
+   - **SonarQube**: Analyzes code quality and enforces a quality gate.
+   - **Trivy**: Scans the Docker image for vulnerabilities (HIGH and CRITICAL).
+4. **Publish to Nexus**: Tags and pushes the built Docker image to a Nexus Docker registry.
+5. **Deploy**: Pulls the latest Docker image from Nexus and deploys it to a specific server, replacing any existing instance.
+6. **Cleanup**: Cleans up the workspace after the build.
+
+This ensures that the application is built, scanned, pushed to the registry, and deployed securely and automatically.
 
 ## Conclusion
 

@@ -1,76 +1,96 @@
 ---
+id: install-config-nexus
+title: Nexus
+sidebar_position: 4
 ---
 
 ## Overview
+
 > This installation happens on the `dsb-hub`.
 
-we installed Nexus using docker compose simply because we are using a conflicting JDK version for SonarQube.
+[Nexus Repository Manager](https://www.sonatype.com/products/sonatype-nexus-oss) is a tool for managing components and build artifacts across various formats like Docker, Maven, and npm. We are using Docker Compose to install Nexus to avoid conflicts with SonarQube's JDK requirements. Nexus will be used to manage Docker images, allowing us to proxy images from Docker Hub, cache them locally, and securely manage retrieval.
 
 ## Installation Steps
-- create new directory
-```
-mkdir apps/nexus
-mkdir apps/nexus/nexus-data
-sudo chown -R 200 nexus-data/
-```
-- create docker-compose yaml
-```
-cd apps/nexus
-touch docker-compose.yml
-```
-- add into yaml
-```
-version: "3"
-services:
-  nexus:
-    image: sonatype/nexus3
-    restart: always
-    volumes:
-      - "./nexus-data:/nexus-data"
-    ports:
-      - "8081:8081"
-      - "8082:8082"
-      - "8085:8085"
-volumes:
-  nexus-data:
-    driver: local
-```
-- run the application
-```
-docker compose up -d
-```
 
-- Confirm the application is up: http://your-ip-address:8081
-![app is live](image.png)
+1. **Create a new directory for Nexus:**
 
-## Configuration steps
+   ```bash
+   mkdir -p apps/nexus/nexus-data
+   sudo chown -R 200 apps/nexus/nexus-data
+   ```
 
-- click the sign in button and locate the admin password:
-![alt text](image-1.png)
+2. **Create the Docker Compose YAML file:**
 
-```
-cat nexus-dataxx/admin.password
-```
+   ```bash
+   cd apps/nexus
+   touch docker-compose.yml
+   ```
 
-- take the password and log in
-![alt text](image-2.png)
+3. **Add the following content to the `docker-compose.yml`:**
 
-- go through the initial setup by changing your password and enabling anonymous access (if you prefer).
+   ```yaml
+   version: "3"
+   services:
+     nexus:
+       image: sonatype/nexus3
+       restart: always
+       volumes:
+         - "./nexus-data:/nexus-data"
+       ports:
+         - "8081:8081"
+         - "8082:8082"
+         - "8085:8085"
+   volumes:
+     nexus-data:
+       driver: local
+   ```
 
-- as admin, in the UI, click on create repository
-![alt text](image-3.png)
+4. **Run the application:**
 
-- click on 'Docker proxy', and enter in the following information:
-1. Name: docker-proxy
-2. Remote Storage Proxy URL: https://registry.hub.docker.com
-3. Docker Index: Docker Hub
-4. Allow Anonymous Pulls
-5. Set HTTP to 8082
+   ```bash
+   docker compose up -d
+   ```
 
-- create local user and set to nx-anonymous, and click create:
-![alt text](image-4.png)
+5. **Confirm that the application is up and running by visiting:**
 
+   ```
+   http://your-ip-address:8081
+   ```
 
-# You're done!
+![Nexus is live](/img/projects/devsecops-home-lab/installation-and-configuration/nexus-initial-view.png)
 
-You've setup your Nexus server.
+## Configuration Steps
+
+1. **Click the "Sign In" button and locate the admin password:**
+
+   ```bash
+   cat nexus-data/admin.password
+   ```
+
+   ![Admin Password](/img/projects/devsecops-home-lab/installation-and-configuration/nexus-found-admin-pw.png)
+
+2. **Use the password to log in and complete the initial setup:**
+
+   - Change your password.
+   - Enable anonymous access if desired.
+
+   ![Login](/img/projects/devsecops-home-lab/installation-and-configuration/nexus-change-admin-pw.png)
+
+3. **As admin, navigate to the UI and create a new repository:**
+   ![Create Repository](/img/projects/devsecops-home-lab/installation-and-configuration/nexus-create-repository.png)
+
+4. **For the new repository, choose "Docker proxy" and input the following information:**
+
+   1. Name: `docker-proxy`
+   2. Remote Storage Proxy URL: `https://registry.hub.docker.com`
+   3. Docker Index: `Docker Hub`
+   4. Enable anonymous pulls.
+   5. Set HTTP to `8082`.
+
+5. **Create a local user with the username `nx-anonymous` and complete the setup:**
+
+   ![Create User](/img/projects/devsecops-home-lab/installation-and-configuration/nexus-create-user.png)
+
+## You're Done!
+
+You've successfully set up your Nexus server.
