@@ -29,15 +29,18 @@ const config: Config = {
     locales: ["en"],
   },
 
-  plugins: [require.resolve("docusaurus-plugin-image-zoom")],
-  
+  plugins: [
+    require.resolve("docusaurus-plugin-image-zoom"),
+    require.resolve("docusaurus-lunr-search"),
+  ],
+
   presets: [
     [
       "classic",
       {
         docs: {
           sidebarPath: "./sidebars.ts",
-          routeBasePath: '/',
+          routeBasePath: "/",
           path: "docs",
         },
         blog: false,
@@ -109,15 +112,15 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
     zoom: {
-      selector: '.markdown :not(em) > img',
+      selector: ".markdown :not(em) > img",
       config: {
         // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
         background: {
-          light: 'rgb(255, 255, 255)',
-          dark: 'rgb(50, 50, 50)'
-        }
-      }
-    }
+          light: "rgb(255, 255, 255)",
+          dark: "rgb(50, 50, 50)",
+        },
+      },
+    },
   } satisfies Preset.ThemeConfig,
 };
 
