@@ -1,11 +1,11 @@
 # For Damien's Personal Homelab
-FROM <your_dsb_hub_ip_address>:8082/node:18-alpine AS builder
+FROM 10.0.0.22:8082/node:18-alpine AS builder
 
 # Set the working directory
 WORKDIR /app
 
 # Configure npm to use your Nexus registry
-RUN npm config set registry http://<your_dsb_hub_ip_address>:8081/repository/npm-proxy/
+RUN npm config set registry http://10.0.0.22:8081/repository/npm-proxy/
 
 # Copy package.json
 COPY package.json ./
@@ -20,7 +20,7 @@ COPY . .
 RUN npm run build
 
 # Step 2: Serve the website using Nginx
-FROM <your_dsb_hub_ip_address>:8082/nginx:alpine
+FROM 10.0.0.22:8082/nginx:alpine
 
 # Copy the compiled website from the builder stage
 COPY --from=builder /app/build /usr/share/nginx/html
