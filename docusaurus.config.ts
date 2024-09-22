@@ -92,20 +92,46 @@ const config: Config = {
       style: "dark",
       links: [
         {
-          title: "Community",
+          title: "Socials",
           items: [
             {
               label: "Discord",
               href: "https://discordapp.com/invite/dummy",
             },
             {
-              label: "Twitter",
-              href: "https://twitter.com/damienjburks",
+              label: "LinkedIn",
+              href: "https://www.linkedin.com/company/devsecblueprint/",
+            },
+          ],
+        },
+        {
+          title: "Blueprint Help",
+          items: [
+            {
+              label: "Report Issue",
+              href: "https://github.com/The-DevSec-Blueprint/devsecblueprint.github.io/issues",
+            },
+            {
+              label: "GitHub Repository",
+              href: "https://github.com/The-DevSec-Blueprint/devsecblueprint.github.io",
+            },
+          ],
+        },
+        {
+          title: "Community",
+          items: [
+            {
+              label: "Code Of Conduct",
+              href: "https://github.com/The-DevSec-Blueprint/devsecblueprint.github.io/blob/main/CODE_OF_CONDUCT.md/",
+            },
+            {
+              label: "License",
+              href: "https://github.com/The-DevSec-Blueprint/devsecblueprint.github.io/blob/main/LICENSE",
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} The DevSec Blueprint - Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} The DevSec Blueprint`,
     },
     prism: {
       theme: prismThemes.github,
