@@ -44,7 +44,7 @@ This server lays the foundation for containerized environments and monitoring:
 
 - **NGINX**: NGINX acts as a web server and reverse proxy, ensuring that incoming traffic is efficiently routed to the appropriate service.
 - **Docker**: Docker provides containerization capabilities, allowing applications and services to run in isolated environments.
-- **Python**: Python is used for running scripts or applications within the server, signifying the presence of custom scripts or services that require a Python runtime.
+- **Containerized Web Application**: This could be anything (Python API, Java App, etc), as long as it is in a Docker container.
 - **Prometheus**: Prometheus is responsible for collecting and monitoring system and application metrics, serving as the central component for alerting and monitoring.
 - **Grafana**: Integrated with Prometheus, Grafana offers visual dashboards that make it easy to observe metrics and logs, giving you insights into system health and performance.
 
