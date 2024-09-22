@@ -6,15 +6,15 @@ pipeline {
        SONAR_TOKEN = credentials('sonar-analysis')
        SONAR_PROJECT_KEY = 'devsecblueprint.github.io'
        DOCKER_IMAGE_NAME = 'devsecblueprint'
-       NEXUS_DOCKER_REGISTRY = '10.0.0.22:8082'
-       NEXUS_DOCKER_PUSH_INDEX = '10.0.0.22:8083'
+       NEXUS_DOCKER_REGISTRY = '<your_dsb_hub_ip_address>:8082'
+       NEXUS_DOCKER_PUSH_INDEX = '<your_dsb_hub_ip_address>:8083'
        NEXUS_DOCKER_PUSH_PATH = 'repository/docker-host'
     }
 
     stages {
         stage('Clone') {
             steps {
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'Gitea PAT', url: 'http://10.0.0.22/damien/owasp-juice-shop.git']])
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'Gitea PAT', url: 'http://<your_dsb_hub_ip_address>/damien/owasp-juice-shop.git']])
             }
         }
         stage('Build') {

@@ -158,7 +158,7 @@ Setting up your own Docker registry locally allows you to host your Docker image
          - REGISTRY_TITLE=Docker Registry UI
          - DELETE_IMAGES=true
          - SHOW_CONTENT_DIGEST=true
-         - NGINX_PROXY_PASS_URL=http://10.0.0.22:5000
+         - NGINX_PROXY_PASS_URL=http://<your_dsb_hub_ip_address>:5000
          - SHOW_CATALOG_NB_TAGS=true
          - CATALOG_MIN_BRANCHES=1
          - CATALOG_MAX_BRANCHES=1
@@ -192,7 +192,7 @@ Setting up your own Docker registry locally allows you to host your Docker image
 
    ```json
    {
-     "insecure-registries": ["10.0.0.22:5000"]
+     "insecure-registries": ["<your_dsb_hub_ip_address>:5000"]
    }
    ```
 
@@ -217,7 +217,7 @@ Setting up your own Docker registry locally allows you to host your Docker image
    ```json
    {
      "log-level": "error",
-     "insecure-registries": ["10.0.0.22:5000"]
+     "insecure-registries": ["<your_dsb_hub_ip_address>:5000"]
    }
    ```
 
