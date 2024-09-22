@@ -87,11 +87,11 @@ sidebar_position: 2
 
     ```plaintext
     Generating public/private rsa key pair.
-    Enter file in which to save the key (/home/damien/.ssh/id_rsa): 
+    Enter file in which to save the key (/home/<your_username>/.ssh/id_rsa): 
     Enter passphrase (empty for no passphrase):
     Enter same passphrase again:
-    Your identification has been saved in /home/damien/.ssh/id_rsa
-    Your public key has been saved in /home/damien/.ssh/id_rsa.pub
+    Your identification has been saved in /home/<your_username>/.ssh/id_rsa
+    Your public key has been saved in /home/<your_username>/.ssh/id_rsa.pub
     The key fingerprint is:
     SHA256:iIitv6/AYHsTTND7ooLJtG0M2NZrOWMer7E0E6hZ8XI jenkins@dsb-hub.com
     The key's randomart image is:
@@ -100,7 +100,7 @@ sidebar_position: 2
 2. Copy the public key to your remote server:
 
     ```bash
-    ssh-copy-id damien@dsb-node-01.local
+    ssh-copy-id <your_username>@dsb-node-01.local
     ```
 
 3. In Jenkins, go to **Manage Jenkins** > **Credentials** > **System** > **Global Credentials (unrestricted)**. Select **Add Credentials** and choose **SSH Username with private key**.

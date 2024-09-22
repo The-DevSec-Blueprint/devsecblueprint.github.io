@@ -53,7 +53,7 @@ In your local `juice-shop-sonarscanning` directory, update the git origin to poi
 ```bash
 cd juice-shop-sonarscanning/
 git remote remove origin
-git remote add origin http://<your_gitea_server_ip>/damien/owasp-juice-shop.git
+git remote add origin http://<your_gitea_server_ip>/<your_username>/owasp-juice-shop.git
 git push -u origin master
 ```
 
@@ -100,7 +100,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'Gitea PAT', url: 'http://<your_dsb_hub_ip_address>/damien/owasp-juice-shop.git']])
+                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'Gitea PAT', url: 'http://<your_dsb_hub_ip_address>/<your_username>/owasp-juice-shop.git']])
             }
         }
         stage('Build') {
