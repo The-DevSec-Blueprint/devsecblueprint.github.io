@@ -34,4 +34,4 @@ You should check out this video below, and look at everything in the table befor
 
 <!-- Links -->
 
-[Damien Burks]: ./authors/#damien-burks
+[Damien Burks]: https://www.linkedin.com/in/damienjburks
