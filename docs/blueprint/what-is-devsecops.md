@@ -4,6 +4,8 @@ title: What is DevSecOps?
 sidebar_position: 1
 ---
 
+## Add in your own sauce to this document...
+
 ## Introduction
 
 According to [RedHat](https://www.redhat.com/en/topics/devops/what-is-devsecops), DevSecOps stands for development, security, and operations. It's an approach to culture, automation, and platform design that integrates security as a shared responsibility throughout the entire IT lifecycle.
@@ -14,7 +16,7 @@ Ultimately, the goal is to shift security "left," or earlier, in the SDLC, ensur
 
 <!-- Add DevOps Image Here -->
 
-Over time, DevSecOps has evolved as a response to the limitations of DevOps, where security was often an afterthought. It emerged from the need to include security in the agile and continuous delivery practices of DevOps. By integrating security into the DevOps process, organizations can reduce the risk of security vulnerabilities and ensure compliance with industry regulations.
+Over time, DevSecOps has evolved as a response to the limitations of DevOps, where security was often an afterthought. It emerged from the need to include security in the agile and continuous delivery practices of DevOps, which allows organizations to reduce the risk of security vulnerabilities and ensure compliance with industry regulations.
 
 <!-- Add DevSecOps image here -->
 
@@ -42,24 +44,18 @@ To get a better understanding of DevSecOps as a whole, you need to understand th
 
    Continuous feedback loops allow for real-time insights into the security posture of the application and infrastructure. This enables teams to quickly identify and remediate security issues as they arise. [Source: Snyk](https://snyk.io/blog/what-is-devsecops/)
 
-## Benefits You Need To Understand
-
-Now that we've covered the principles, you can understand what the key benefits of DevSecOps are, which are highlighted below:
-
-- **Improved Security Posture:** Early identification and remediation of vulnerabilities reduce the risk of security breaches. [Source: IBM](https://www.ibm.com/cloud/learn/devsecops)
-- **Faster Deployment:** Security automation and integration reduce delays caused by manual security checks. [Source: GitLab](https://about.gitlab.com/topics/devsecops/)
-- **Compliance:** Continuous compliance monitoring ensures adherence to industry regulations and standards. [Source: Cloudflare](https://www.cloudflare.com/learning/security/what-is-devsecops/)
-- **Collaboration:** Enhanced collaboration between development, security, and operations teams fosters a culture of shared responsibility. [Source: Aqua Security](https://blog.aquasec.com/devsecops-culture)
-
 ## Recommended Resources
+
+Before you move onto the next section, here are some of the various resources that I recommend you look into getting, such as certifications, books to read, and YouTube videos to watch to deepen your understanding or add to your plan.
 
 ### Certifications
 
 So I had to recommend certifications that you should get in order to transition into DevSecOps, here are the list of things that I would recommend (not in a specific order):
 
 - **CompTIA Security+**
-- **Certified DevSecOps Professional (CDP):** [Source: Practical DevSecOps](https://www.practical-devsecops.com/)
-- **Certified Information Systems Security Professional (CISSP):**[Source: CISSP](https://www.isc2.org/Certifications/CISSP)
+- **DevOpsSec**
+- **Certified DevSecOps Professional (CDP)**
+- **Certified DevSecOps Expert (CDE)**
 
 If you're interested in the Cloud also, then you would want to check these certifications out:
 
@@ -76,9 +72,5 @@ Here are some videos that I would recommend you read to understand more about De
 For those of you who like to read, I'd encourage you to read these. They are going to really help prepare your mind for you DevSecOps career.
 
 - **The Phoenix Project**
-- **"The DevOps Handbook" by Gene Kim, Patrick Debois, John Willis, and Jez Humble:**
-- **"Accelerate: The Science of Lean Software and DevOps" by Nicole Forsgren, Jez Humble, and Gene Kim:**
-
-## Wrap Up
-
-DevSecOps is essential for organizations that want to build secure, compliant, and resilient applications without compromising on speed or agility. By integrating security into every phase of the SDLC, teams can proactively address vulnerabilities and foster a culture of shared responsibility for security.
+- **Continuous Delivery**
+- **The DevOps Handbook**
