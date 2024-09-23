@@ -4,6 +4,16 @@ title: What is the Secure SDLC and SDLC?
 sidebar_position: 3
 ---
 
+## The Role of DevSecOps in the SDLC
+
+DevSecOps integrates security into each phase of the SDLC:
+
+- **Planning:** Include security requirements and threat modeling.
+- **Development:** Use secure coding practices and conduct code reviews.
+- **Testing:** Perform automated security testing (SAST, DAST).
+- **Deployment:** Use Infrastructure as Code (IaC) and container security tools.
+- **Monitoring:** Implement continuous security monitoring and alerting. [Source: Microsoft](https://docs.microsoft.com/en-us/azure/security/development/devsecops-security-automation)
+
 ## 1. Introduction
 
 - Definition of the Software Development Lifecycle (SDLC).
