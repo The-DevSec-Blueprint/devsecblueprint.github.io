@@ -61,7 +61,7 @@ If you're interested in the Cloud also, then you would want to check these certi
 
 ### YouTube Videos
 
-Here are some videos that I would recommend you read to understand more about DevSecOps.
+Here are some videos that I would recommend you watch to understand more about DevSecOps.
 
 #### What is DevSecOps? DevSecOps explained in 8 Mins
 
