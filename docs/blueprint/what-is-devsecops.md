@@ -51,13 +51,15 @@ Before you move onto the next section, here are some of the various resources th
 So I had to recommend certifications that you should get in order to transition into DevSecOps, here are the list of things that I would recommend (not in a specific order):
 
 - **CompTIA Security+**
-- **DevOpsSec**
+- **Certified Kubernetes Administrator (CKA)**
+- **CompTIA Linux+**
 - **Certified DevSecOps Professional (CDP)**
 - **Certified DevSecOps Expert (CDE)**
 
 If you're interested in the Cloud also, then you would want to check these certifications out:
 
-- **AWS Certified Security – Specialty:** [Source: AWS](https://aws.amazon.com/certification/certified-security-specialty/)
+- **AWS Certified Security – Specialty**
+- **AWS Certified Developer - Associate**
 
 ### YouTube Videos
 
