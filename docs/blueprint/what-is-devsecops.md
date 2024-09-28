@@ -63,7 +63,27 @@ If you're interested in the Cloud also, then you would want to check these certi
 
 Here are some videos that I would recommend you read to understand more about DevSecOps.
 
-- [What is DevSecOps? DevSecOps explained in 8 minutes!](https://www.youtube.com/watch?v=nrhxNNH5lt0): Nana really goes in and explains DevSecOps very well.
+#### What is DevSecOps? DevSecOps explained in 8 Mins
+
+<iframe
+  width="100%"
+  height="500"
+  src="https://www.youtube.com/embed/nrhxNNH5lt0?si=OC_5Tq6pBROq7DyC"
+  frameborder="0"
+  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+#### Accelerate Your DevSecOps Journey: 5 Key Skills in 5 Minutes
+
+<iframe
+  width="100%"
+  height="500"
+  src="https://www.youtube.com/embed/7J9rjMbPZm4?si=FuH6jox0BE57Ip-n"
+  frameborder="0"
+  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
 
 ### Books
 

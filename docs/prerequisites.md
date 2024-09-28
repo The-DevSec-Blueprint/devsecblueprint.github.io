@@ -15,15 +15,6 @@ Before diving into the core concepts and theories of DevSecOps, it's important t
 
 You should check out this video below, and look at everything in the table before proceeding:
 
-<iframe
-  width="100%"
-  height="500"
-  src="https://www.youtube.com/embed/7J9rjMbPZm4?si=FuH6jox0BE57Ip-n"
-  frameborder="0"
-  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen
-></iframe>
-
 | Concept                  | Reason(s) You Need To Know It                                                                                                                                                                                                                                                                                                                                  | Resources                                                                                                                                                                                                                                                                                                                                                                                                            |
 | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | DevOps                   | Grasp the principles of DevOps, including the culture of collaboration, automation, and continuous integration/continuous deployment (CI/CD). A solid understanding of DevOps practices is crucial as DevSecOps builds on these foundations by integrating security into the development process.                                                              | <ul><li><a href="https://thedevops.guide">The DevOps Guide</a></li><li><a href="https://learntocloud.guide/phase4/">Learn To Cloud - Phase 4</a></li><li><a href="https://www.youtube.com/watch?v=0yWAtQ6wYNM&pp=ygUOd2FodCBpcyBkZXZvcHM%3D">What is DevOps? REALLY understand it - DevOps vs SRE</a></li></ul>                                                                                                      |
