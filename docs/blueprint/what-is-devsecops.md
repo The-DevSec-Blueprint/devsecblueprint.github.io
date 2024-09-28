@@ -4,8 +4,6 @@ title: What is DevSecOps?
 sidebar_position: 1
 ---
 
-## Add in your own sauce to this document...
-
 ## Introduction
 
 According to [RedHat](https://www.redhat.com/en/topics/devops/what-is-devsecops), DevSecOps stands for development, security, and operations. It's an approach to culture, automation, and platform design that integrates security as a shared responsibility throughout the entire IT lifecycle.
