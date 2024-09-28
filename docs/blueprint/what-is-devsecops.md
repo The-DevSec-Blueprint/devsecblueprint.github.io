@@ -28,19 +28,19 @@ To get a better understanding of DevSecOps as a whole, you need to understand th
 
 1. **Integration of Security**
 
-   Security is integrated into every phase of the SDLC, from planning and design to development, testing, deployment, and monitoring. This holistic approach ensures that security is not an afterthought but a fundamental aspect of the development process. [Source: DevOps Institute](https://www.devopsinstitute.com/devsecops-skills-practices/)
+   Security is integrated into every phase of the SDLC, from planning and design to development, testing, deployment, and monitoring. This holistic approach ensures that security is not an afterthought but a fundamental aspect of the development process.
 
 2. **Automation**
 
-   Automation is crucial in DevSecOps to ensure that security checks are consistently applied without slowing down the development process. Automated security tests, such as static code analysis and vulnerability scans, can be integrated into CI/CD pipelines to catch issues early. [Source: OWASP](https://owasp.org/www-project-devsecops-guidance/)
+   Automation is crucial in DevSecOps to ensure that security checks are consistently applied without slowing down the development process. Automated security tests, such as static code analysis and vulnerability scans, can be integrated into CI/CD pipelines to catch issues early.
 
 3. **Collaboration**
 
-   DevSecOps fosters collaboration among development, security, and operations teams. It breaks down silos and encourages a shared responsibility for security, leading to a more cohesive and effective approach to software development and deployment. [Source: Atlassian](https://www.atlassian.com/devops/devsecops)
+   DevSecOps fosters collaboration among development, security, and operations teams. It breaks down silos and encourages a shared responsibility for security, leading to a more cohesive and effective approach to software development and deployment.
 
 4. **Continuous Feedback**
 
-   Continuous feedback loops allow for real-time insights into the security posture of the application and infrastructure. This enables teams to quickly identify and remediate security issues as they arise. [Source: Snyk](https://snyk.io/blog/what-is-devsecops/)
+   Continuous feedback loops allow for real-time insights into the security posture of the application and infrastructure. This enables teams to quickly identify and remediate security issues as they arise.
 
 ## Recommended Resources
 
