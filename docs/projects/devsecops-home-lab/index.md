@@ -7,6 +7,15 @@ sidebar_position: 3
 
 Author: [Damien Burks]
 
+<iframe
+  width="100%"
+  height="500"
+  src="https://www.youtube.com/watch?v=3612XpqUTfc"
+  frameborder="0"
+  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
 ## Overview
 
 So you decided that you want to go down the route of building your own home lab? Well, hell... welcome! This is the first project where I'm going to show you how to setup your own home lab from scratch! This will include you going in and setting up and configuring databases, installing packages, and a lot of things that System Administrators would do.
@@ -26,8 +35,6 @@ This is totally okay! There are two options that I'd recommend then:
 ## Architecture Overview and Debrief
 
 My home lab consists of two servers running Ubuntu 24.04 LTS. To avoid any compatibility issues, you want to ensure that you are using this EXACT version.
-
-You can take a look at this video to really understand the specifications of my machines: [YouTube Video - TBD](https://youtube.com)
 
 ![Architecture Diagram](/img/projects/devsecops-home-lab/architecture.drawio.svg)
 
